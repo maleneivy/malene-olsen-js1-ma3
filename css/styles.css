@@ -5,6 +5,11 @@
     border: solid 0.5px #000;
 }
 
+.error {
+    background-color: red;
+    font-size: 18px;
+}
+
 .loader {
     border: 16px solid #f3f3f3;
     border-top: 16px solid green;

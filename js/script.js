@@ -18,25 +18,28 @@ const url = "https://api.rawg.io/api/games?dates=2019-01-01,2019-12-31&ordering=
 const containerOfResults = document.querySelector(".results")
 
 async function getFacts() {
+    try {
+        const response = await fetch(url);
 
-    const response = await fetch(url);
+        const data = await response.json();
 
-    const data = await response.json();
+        const facts = data.results;
 
-    const facts = data.results;
+        containerOfResults.innerHTML = "";
 
+        for (let i = 0; i < facts.length; i++) {
 
+            if (i === 7) {
+                break
+            }
 
-    for (let i = 0; i < facts.length; i++) {
-
-
-        if (i === 7) {
-            break
+            containerOfResults.innerHTML += `<div class="results">Name: ${facts[i].name} <br>Number of tags: ${facts[i].tags.length} <br>Rating: ${facts[i].rating}</div>`;
         }
 
-        containerOfResults.innerHTML += `<div class="results">Name: ${facts[i].name} /Number og tags: ${facts[i].tags.length} /Rating: ${facts[i].rating}</div>`
-
+        // if there is any errors: 
+    } catch (error) {
+        console.log("An error occured", error);
+        containerOfResults.innerHTML = anErrorHasOccured("An error occurred when calling the API");
     }
 }
-
 getFacts();
