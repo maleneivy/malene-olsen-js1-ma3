@@ -3,8 +3,12 @@
 
 Goal
 This assignment will test the JavaScript concepts you have learned in this module.
+
+
 Level 1
+
 Question 1
+
 Convert the function below to an arrow function:
 function getRemainder(a,b) {
 return a % b;
@@ -12,6 +16,7 @@ return a % b;
 
 
 Question 2
+
 Make a call to the Rawg API.
 
 Go to https://rawg.io/apidocs and get an API key which you’ll use as part of the endpoint you’re making an API call to. You can use https://noroff.no for the URL and Noroff Assignment for the description.
